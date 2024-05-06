@@ -11,7 +11,7 @@ import { useState } from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 import { getDesignTokens } from "./Theme";
-import { Outlet } from "react-router-dom";
+import { Outlet} from "react-router-dom";
 
 const darkTheme = createTheme({
   palette: {
@@ -47,7 +47,11 @@ export default function MiniDrawer() {
     <ThemeProvider theme={theme}>
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
-        <TopBar open={open} handleDrawerOpen={handleDrawerOpen} setMode={setMode} />
+        <TopBar
+          open={open}
+          handleDrawerOpen={handleDrawerOpen}
+          setMode={setMode}
+        />
         <SideBar open={open} handleDrawerClose={handleDrawerClose} />
       </Box>
       <Outlet/>

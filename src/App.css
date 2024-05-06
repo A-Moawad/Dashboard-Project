@@ -5,14 +5,4 @@
   text-align: center;
 }
 
-.avatar {
-  background-color: red;
-}
-
-@media (max-width: 768px) {
-  .avatar {
-    width: 30px;
-    height: 30px;
-  }
-}
 

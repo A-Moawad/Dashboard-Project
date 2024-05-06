@@ -1,0 +1,66 @@
+
+export const rows = [
+  {
+    id: 1,
+    lastName: "alberto",
+    firstName: "batesta",
+    age: 14,
+    access: "Manager",
+  },
+  {
+    id: 2,
+    lastName: "Lannister",
+    firstName: "Cersei",
+    age: 31,
+    access: "Manager",
+  },
+  {
+    id: 3,
+    lastName: "Lannister",
+    firstName: "Jaime",
+    age: 31,
+    access: "Admin",
+  },
+  {
+    id: 4,
+    lastName: "Abduallah",
+    firstName: "Mohssen",
+    age: 11,
+    access: "Admin",
+  },
+  {
+    id: 5,
+    lastName: "Targaryen",
+    firstName: "Daenerys",
+    age: null,
+    access: "Admin",
+  },
+  {
+    id: 6,
+    lastName: "Melisandre",
+    firstName: null,
+    age: 150,
+    access: "User",
+  },
+  {
+    id: 7,
+    lastName: "Clifford",
+    firstName: "Ferrara",
+    age: 44,
+    access: "User",
+  },
+  {
+    id: 8,
+    lastName: "Frances",
+    firstName: "Rossini",
+    age: 36,
+    access: "User",
+  },
+  {
+    id: 9,
+    lastName: "abduallah",
+    firstName: "elsyed",
+    age: 65,
+    access: "User",
+  },
+];
