@@ -110,19 +110,20 @@ export default function DataGridDemo() {
           mx: "auto",
         }}
       >
-        <Typography sx={{ fontSize: "32px", color: "#1e88e5", fontWeight:"bold", letterSpacing: "-2px" }}>
+        <Typography
+          sx={{
+            fontSize: "32px",
+            color: "#1e88e5",
+            fontWeight: "bold",
+            letterSpacing: "-2px",
+          }}
+        >
           TEAM
         </Typography>
         <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>
           Managing the Team Members
         </Typography>
-        <DataGrid
-          rows={rows}
-          columns={columns}
-          pageSize={5}
-          checkboxSelection
-          disableSelectionOnClick
-        />
+        <DataGrid rows={rows} columns={columns} />
       </Box>
     </div>
   );

@@ -3,12 +3,11 @@ import Box from "@mui/material/Box";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import Typography from "@mui/material/Typography";
 
-import { rows, columns} from "./data";
+import { rows, columns } from "./data";
 import { useTheme } from "@mui/material";
 
 function Contacts() {
   const theme = useTheme();
-
 
   return (
     <div style={{ marginTop: "70px", width: "100%", height: "100%" }}>
@@ -38,9 +37,6 @@ function Contacts() {
           }}
           rows={rows}
           columns={columns}
-          pageSize={5}
-          checkboxSelection
-          disableSelectionOnClick
         />
       </Box>
     </div>

@@ -14,7 +14,6 @@ export const columns = [
     headerAlign: "left",
     align: "left",
     width: 44,
-    flex: 1,
   },
   {
     field: "phone",
