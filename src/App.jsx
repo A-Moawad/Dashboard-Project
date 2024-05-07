@@ -1,17 +1,16 @@
-import * as React from "react";
-import { styled } from "@mui/material/styles";
+import React, { useState, useMemo, createContext } from "react";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
-import './App.css';
-
 import TopBar from "./components/TopBar";
 import SideBar from "./components/SideBar";
-import { useState } from "react";
-
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-
+import { Outlet } from "react-router-dom";
 import { getDesignTokens } from "./Theme";
-import { Outlet} from "react-router-dom";
+
+const OpenContext = createContext({
+  open: false,
+  setOpen: () => {},
+});
 
 const darkTheme = createTheme({
   palette: {
@@ -21,7 +20,9 @@ const darkTheme = createTheme({
 
 export default function MiniDrawer() {
   const [open, setOpen] = useState(false);
-  const [mode, setMode] = React.useState(localStorage.getItem("mode")|| 'light');
+  const [mode, setMode] = React.useState(
+    localStorage.getItem("mode") || "light"
+  );
   const colorMode = React.useMemo(
     () => ({
       // The dark mode switch would invoke this method
@@ -45,16 +46,18 @@ export default function MiniDrawer() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ display: "flex" }}>
-        <CssBaseline />
-        <TopBar
-          open={open}
-          handleDrawerOpen={handleDrawerOpen}
-          setMode={setMode}
-        />
-        <SideBar open={open} handleDrawerClose={handleDrawerClose} />
-      </Box>
-      <Outlet/>
+      <OpenContext.Provider value={{ open, setOpen }}>
+        <Box sx={{ display: "flex" }}>
+          <CssBaseline />
+          <TopBar
+            open={open}
+            handleDrawerOpen={() => setOpen(true)}
+            setMode={setMode}
+          />
+          <SideBar open={open} handleDrawerClose={() => setOpen(false)} />
+          <Outlet />
+        </Box>
+      </OpenContext.Provider>
     </ThemeProvider>
   );
 }

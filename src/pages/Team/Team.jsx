@@ -102,22 +102,28 @@ export default function DataGridDemo() {
   ];
 
   return (
-    <Box
-      sx={{
-        height: 600,
-        width: "98%",
-        mx: "auto",
-        // marginLeft: (theme) => (open ? theme.spacing(30): 0),
-        my: "35px",
-      }}
-    >
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        pageSize={5}
-        checkboxSelection
-        disableSelectionOnClick
-      />
-    </Box>
+    <div style={{ marginTop: "70px", width: "100%", height: "100%" }}>
+      <Box
+        sx={{
+          height: 600,
+          width: "90%",
+          mx: "auto",
+        }}
+      >
+        <Typography sx={{ fontSize: "32px", color: "#1e88e5", fontWeight:"bold", letterSpacing: "-2px" }}>
+          TEAM
+        </Typography>
+        <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>
+          Managing the Team Members
+        </Typography>
+        <DataGrid
+          rows={rows}
+          columns={columns}
+          pageSize={5}
+          checkboxSelection
+          disableSelectionOnClick
+        />
+      </Box>
+    </div>
   );
 }
