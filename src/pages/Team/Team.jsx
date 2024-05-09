@@ -115,7 +115,7 @@ export default function DataGridDemo() {
             fontSize: "32px",
             color: "#1e88e5",
             fontWeight: "bold",
-            letterSpacing: "-2px",
+            letterSpacing: "-1px",
           }}
         >
           TEAM
