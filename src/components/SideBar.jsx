@@ -258,7 +258,17 @@ const SideBar = ({ open, handleDrawerClose }) => {
             <ListItem
               key={item.text}
               disablePadding
-              sx={{ display: "block" }}
+              sx={{
+                display: "block",
+                bgcolor:
+                  location.pathname === item.path &&
+                  theme.palette.mode === "dark"
+                    ? grey[800]
+                    : location.pathname === item.path &&
+                      theme.palette.mode === "light"
+                    ? grey[200]
+                    : null,
+              }}
               onClick={() => {
                 navigate(item.path);
                 // handleDrawerClose();
@@ -294,7 +304,17 @@ const SideBar = ({ open, handleDrawerClose }) => {
             <ListItem
               key={item.text}
               disablePadding
-              sx={{ display: "block" }}
+              sx={{
+                display: "block",
+                bgcolor:
+                  location.pathname === item.path &&
+                  theme.palette.mode === "dark"
+                    ? grey[800]
+                    : location.pathname === item.path &&
+                      theme.palette.mode === "light"
+                    ? grey[200]
+                    : null,
+              }}
               onClick={() => {
                 navigate(item.path);
                 // handleDrawerClose();

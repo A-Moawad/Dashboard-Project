@@ -4,8 +4,25 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import { useForm } from "react-hook-form";
 import { Alert, Button, MenuItem, Snackbar, Stack } from "@mui/material";
-
 import { useState } from "react";
+
+
+
+
+const roles = [
+  {
+    value: "Admin",
+    label: "Admin",
+  },
+  {
+    value: "Manger",
+    label: "Manger",
+  },
+  {
+    value: "User",
+    label: "User",
+  },
+];
 
 function Form() {
   const [open, setOpen] = useState(false);
@@ -109,6 +126,22 @@ function Form() {
         helperText={errors.address ? "Address is required" : ""}
       />
       <TextField {...register("address2")} label="Address 2" variant="filled" />
+      <TextField
+        {...register("role")}
+        variant="filled"
+        id="role-select"
+        select
+        label="Role"
+        defaultValue="User" // React-hook-form will manage this
+        error={!!errors.role}
+        helperText={errors.role ? "Role selection is required" : ""}
+      >
+        {roles.map((option) => (
+          <MenuItem key={option.value} value={option.value}>
+            {option.label}
+          </MenuItem>
+        ))}
+      </TextField>
       <Button variant="contained" type="submit">
         Submit
       </Button>
