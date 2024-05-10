@@ -86,7 +86,7 @@ function TopBar({ open, handleDrawerOpen, setMode }) {
   };
 
   return (
-    <AppBar position="fixed" open={open}>
+    <AppBar position="fixed" open={open} >
       <Toolbar>
         <IconButton
           color="inherit"

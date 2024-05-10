@@ -26,10 +26,10 @@ function Invoices() {
             letterSpacing: "-2px",
           }}
         >
-          CONTACTS
+          INVOICES
         </Typography>
         <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>
-          List of Contacts for Future Reference
+          List of Invoice Balances
         </Typography>
         <DataGrid
           slots={{

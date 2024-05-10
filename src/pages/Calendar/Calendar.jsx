@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import FullCalendar from "@fullcalendar/react"; // must go before plugins
 import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
 import { Paper, Stack } from "@mui/material";
@@ -76,41 +76,43 @@ const Calendar = () => {
   };
 
   return (
-    <Stack direction={"row"} sx={{mt: "80px", minWidth: "100%", minHeight: "100%"}}>
-      <Paper className="demo-app-sidebar">
-        <h2 style={{ textAlign: "center" }}>
-          All Events ({currentEvents.length})
-        </h2>
-        <ul>{currentEvents.map(renderSidebarEvent)}</ul>
-      </Paper>
+    <div style={{paddingTop: "100px" , width: "100%"}}>
+      <Stack direction={"row"} sx={{ minWidth: "100%", minHeight: "100%" }}>
+        <Paper className="demo-app-sidebar">
+          <h2 style={{ textAlign: "center" }}>
+            All Events ({currentEvents.length})
+          </h2>
+          <ul>{currentEvents.map(renderSidebarEvent)}</ul>
+        </Paper>
 
-      <div className="demo-app-main">
-        <FullCalendar
-          plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-          headerToolbar={{
-            left: "prev,next today",
-            center: "title",
-            right: "dayGridMonth,timeGridWeek,timeGridDay",
-          }}
-          initialView="dayGridMonth"
-          editable={true}
-          selectable={true}
-          selectMirror={true}
-          dayMaxEvents={true}
-          weekends={weekendsVisible}
-          // initialEvents={INITIAL_EVENTS} // alternatively, use the `events` setting to fetch from a feed
-          select={handleDateSelect}
-          eventContent={renderEventContent} // custom render function
-          eventClick={handleEventClick}
-          eventsSet={handleEvents} // called after events are initialized/added/changed/removed
-          /* you can update a remote database when these fire:
+        <div className="demo-app-main">
+          <FullCalendar
+            plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+            headerToolbar={{
+              left: "prev,next today",
+              center: "title",
+              right: "dayGridMonth,timeGridWeek,timeGridDay",
+            }}
+            initialView="dayGridMonth"
+            editable={true}
+            selectable={true}
+            selectMirror={true}
+            dayMaxEvents={true}
+            weekends={weekendsVisible}
+            // initialEvents={INITIAL_EVENTS} // alternatively, use the `events` setting to fetch from a feed
+            select={handleDateSelect}
+            eventContent={renderEventContent} // custom render function
+            eventClick={handleEventClick}
+            eventsSet={handleEvents} // called after events are initialized/added/changed/removed
+            /* you can update a remote database when these fire:
             eventAdd={function(){}}
             eventChange={function(){}}
             eventRemove={function(){}}
             */
-        />
-      </div>
-    </Stack>
+          />
+        </div>
+      </Stack>
+    </div>
   );
 };
 

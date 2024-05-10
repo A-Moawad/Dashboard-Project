@@ -11,8 +11,11 @@ b {
 }
 
 .demo-app-sidebar {
-    width: 300px;
+    width: 250px;
     line-height: 1.5;
+    overflow: auto;
+    word-wrap: break-word;
+    /* or white-space: pre-wrap; */
 
     border-right: 1px solid #d3e2e8;
 }
