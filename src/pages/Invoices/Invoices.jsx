@@ -5,12 +5,13 @@ import Typography from "@mui/material/Typography";
 
 import { rows, columns } from "./data";
 import { useTheme } from "@mui/material";
+import Header from "../../components/Header";
 
 function Invoices() {
   const theme = useTheme();
 
   return (
-    <div style={{ marginTop: "70px", width: "100%", height: "100%" }}>
+    <div style={{width: "100%", height: "100%" }}>
       <Box
         sx={{
           height: 600,
@@ -18,19 +19,10 @@ function Invoices() {
           mx: "auto",
         }}
       >
-        <Typography
-          sx={{
-            fontSize: "32px",
-            color: "#1e88e5",
-            fontWeight: "bold",
-            letterSpacing: "-2px",
-          }}
-        >
-          INVOICES
-        </Typography>
-        <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>
-          List of Invoice Balances
-        </Typography>
+        <Header
+          title="INVOICES"
+          subTitle="List of Invoice Balances"
+        />
         <DataGrid
           slots={{
             toolbar: GridToolbar,

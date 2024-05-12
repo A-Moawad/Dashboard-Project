@@ -5,9 +5,7 @@ import Typography from "@mui/material/Typography";
 import { useForm } from "react-hook-form";
 import { Alert, Button, MenuItem, Snackbar, Stack } from "@mui/material";
 import { useState } from "react";
-
-
-
+import Header from "../../components/Header";
 
 const roles = [
   {
@@ -52,26 +50,13 @@ function Form() {
       onSubmit={handleSubmit(onSubmit)}
       sx={{
         width: "100%",
-        marginTop: "70px",
         display: "flex",
         flexDirection: "column",
         gap: "20px",
-        padding: "20px",
+        px: "20px",
       }}
     >
-      <Typography
-        sx={{
-          fontSize: "32px",
-          color: "#1e88e5",
-          fontWeight: "bold",
-          letterSpacing: "-1px",
-        }}
-      >
-        CREATE USER
-      </Typography>
-      <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>
-        Create a New User Profile
-      </Typography>
+      <Header title="CREATE USER" subTitle="Create a New User Profile" />
       <Stack direction={{ xs: "column", md: "row" }} spacing={2}>
         <TextField
           {...register("firstName", {

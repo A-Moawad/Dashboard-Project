@@ -29,7 +29,7 @@ import {
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<MiniDrawer />}>
-      <Route  index element={<Dashboard />}></Route>
+      <Route index element={<Dashboard />}></Route>
       <Route path="/team" element={<Team />}></Route>
       <Route path="/contacts" element={<Contacts />}></Route>
       <Route path="/invoices" element={<Invoices />}></Route>

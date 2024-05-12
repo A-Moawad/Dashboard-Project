@@ -6,6 +6,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import "./faq.css";
+import Header from "../../components/Header";
 
 function Faq() {
   const faqData = [
@@ -81,20 +82,8 @@ function Faq() {
 
   return (
     <Stack direction="column" className="accordions">
-      <Typography
-        sx={{
-          fontSize: "32px",
-          color: "#1e88e5",
-          fontWeight: "bold",
-          letterSpacing: "-2px",
-          marginTop: "20px",
-        }}
-      >
-        FAQ
-      </Typography>
-      <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>
-        Frequently Asked Questions Page
-      </Typography>
+      <Header title="FAQ" subTitle="Frequently Asked Questions Page"/>
+      
       {faqData.map((item) => (
         <Accordion
           className="accordion"

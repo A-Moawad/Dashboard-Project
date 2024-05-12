@@ -11,6 +11,7 @@ import {
   LockOpenOutlined,
   SecurityOutlined,
 } from "@mui/icons-material";
+import Header from "../../components/Header";
 
 export default function DataGridDemo() {
   const theme = useTheme();
@@ -102,7 +103,7 @@ export default function DataGridDemo() {
   ];
 
   return (
-    <div style={{ marginTop: "70px", width: "100%", height: "100%" }}>
+    <div style={{width: "100%", height: "100%" }}>
       <Box
         sx={{
           height: 600,
@@ -110,19 +111,7 @@ export default function DataGridDemo() {
           mx: "auto",
         }}
       >
-        <Typography
-          sx={{
-            fontSize: "32px",
-            color: "#1e88e5",
-            fontWeight: "bold",
-            letterSpacing: "-1px",
-          }}
-        >
-          TEAM
-        </Typography>
-        <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>
-          Managing the Team Members
-        </Typography>
+        <Header title="TEAM" subTitle="Managing the Team Members"/>
         <DataGrid rows={rows} columns={columns} />
       </Box>
     </div>
