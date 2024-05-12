@@ -1,22 +1,13 @@
-import { ResponsiveBar } from "@nivo/bar";
 import { Box, useTheme } from "@mui/material";
+import { ResponsiveLine } from "@nivo/line";
+import { data } from "./data";
 
-import {data} from "./data";
-
-const Bar = ({ isDashbord = false }) => {
+function Line({isDahboard = false}) {
   const theme = useTheme();
+
   return (
-    <Box
-      sx={{
-        height: isDashbord ? "300px" : "75vh",
-        width: "100vw",
-        px: "100px",
-      }}
-    >
-      <ResponsiveBar
-        data={data}
-        keys={["Spain", "France", "Germany"]}
-        indexBy="year"
+    <Box sx={{ height: isDahboard ? "280px" : "75vh" }}>
+      <ResponsiveLine
         theme={{
           textColor: theme.palette.text.primary,
           fontSize: 11,
@@ -47,7 +38,7 @@ const Bar = ({ isDashbord = false }) => {
           grid: {
             line: {
               stroke: theme.palette.divider,
-              strokeWidth: 1,
+              strokeWidth: 0,
             },
           },
           legends: {
@@ -111,107 +102,71 @@ const Bar = ({ isDashbord = false }) => {
             tableCellValue: {},
           },
         }}
-        margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
-        padding={0.3}
-        valueScale={{ type: "linear" }}
-        indexScale={{ type: "band", round: true }}
-        colors={{ scheme: "paired" }}
-        defs={[
-          {
-            id: "dots",
-            type: "patternDots",
-            background: "inherit",
-            color: "#38bcb2",
-            size: 4,
-            padding: 1,
-            stagger: true,
-          },
-          {
-            id: "lines",
-            type: "patternLines",
-            background: "inherit",
-            color: "#eed312",
-            rotation: -45,
-            lineWidth: 6,
-            spacing: 10,
-          },
-        ]}
-        fill={[
-          {
-            match: {
-              id: "fries",
-            },
-            id: "dots",
-          },
-          {
-            match: {
-              id: "sandwich",
-            },
-            id: "lines",
-          },
-        ]}
-        borderColor={{
-          from: "color",
-          modifiers: [["darker", 1.6]],
+        data={data}
+        curve="catmullRom"
+        margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+        xScale={{ type: "point" }}
+        yScale={{
+          type: "linear",
+          min: "auto",
+          max: "auto",
+          stacked: true,
+          reverse: false,
         }}
+        yFormat=" >-.2f"
         axisTop={null}
         axisRight={null}
         axisBottom={{
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: isDashbord ? null : "Year",
+          legend: isDahboard ? null : "transportation",
+          legendOffset: 36,
           legendPosition: "middle",
-          legendOffset: 35,
         }}
         axisLeft={{
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: isDashbord ? null : "salary/month",
+          legend: isDahboard ? null : "Count",
+          legendOffset: -45,
           legendPosition: "middle",
-          legendOffset: -55,
         }}
-        labelSkipWidth={12}
-        labelSkipHeight={12}
-        labelTextColor={{
-          from: "color",
-          modifiers: [["darker", 1.6]],
-        }}
+        pointSize={10}
+        pointColor={{ theme: "background" }}
+        pointBorderWidth={2}
+        pointBorderColor={{ from: "serieColor" }}
+        pointLabelYOffset={-12}
+        useMesh={true}
         legends={[
           {
-            dataFrom: "keys",
             anchor: "bottom-right",
             direction: "column",
             justify: false,
-            translateX: 120,
+            translateX: 100,
             translateY: 0,
-            itemsSpacing: 2,
-            itemWidth: 100,
-            itemHeight: 20,
+            itemsSpacing: 0,
             itemDirection: "left-to-right",
-            itemOpacity: 0.85,
-            symbolSize: 20,
+            itemWidth: 80,
+            itemHeight: 20,
+            itemOpacity: 0.75,
+            symbolSize: 12,
+            symbolShape: "circle",
+            symbolBorderColor: "rgba(0, 0, 0, .5)",
             effects: [
               {
                 on: "hover",
                 style: {
+                  itemBackground: "rgba(0, 0, 0, .03)",
                   itemOpacity: 1,
                 },
               },
             ],
           },
         ]}
-        role="application"
-        ariaLabel="Nivo bar chart demo"
-        barAriaLabel={function (e) {
-          return (
-            e.id + ": " + e.formattedValue + " in country: " + e.indexValue
-          );
-        }}
       />
     </Box>
   );
-};
+}
 
-export default Bar;
+export default Line;
