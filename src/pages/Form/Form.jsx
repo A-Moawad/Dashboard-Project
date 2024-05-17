@@ -55,6 +55,7 @@ function Form() {
         gap: "20px",
         px: "20px",
       }}
+      mt={10}
     >
       <Header title="CREATE USER" subTitle="Create a New User Profile" />
       <Stack direction={{ xs: "column", md: "row" }} spacing={2}>

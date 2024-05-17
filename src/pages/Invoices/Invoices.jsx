@@ -11,7 +11,7 @@ function Invoices() {
   const theme = useTheme();
 
   return (
-    <div style={{width: "100%", height: "100%" }}>
+    <Box sx={{width: "100%", height: "100%" }} mt={10}>
       <Box
         sx={{
           height: 600,
@@ -34,7 +34,7 @@ function Invoices() {
           disableSelectionOnClick
         />
       </Box>
-    </div>
+    </Box>
   );
 }
 

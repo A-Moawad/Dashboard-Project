@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 
 const PieChart = () => {
   return (
-    <Box sx={{width: "100%"}}>
+    <Box sx={{width: "100%"}} mt={10}>
       <Header title="Pie Chart" subTitle="Simple Pie Chart" />
       <Pie />
     </Box>

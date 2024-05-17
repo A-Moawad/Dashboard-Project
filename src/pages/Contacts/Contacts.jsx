@@ -11,7 +11,7 @@ function Contacts() {
   const theme = useTheme();
 
   return (
-    <div style={{width: "100%", height: "100%" }}>
+    <Box style={{ width: "100%", height: "100%" }} mt={10}>
       <Box
         sx={{
           height: 600,
@@ -19,9 +19,11 @@ function Contacts() {
           mx: "auto",
         }}
       >
-        <Header title="CONTACTS" subTitle="List of Contacts for Future Reference"/>
+        <Header
+          title="CONTACTS"
+          subTitle="List of Contacts for Future Reference"
+        />
 
-"
         <DataGrid
           slots={{
             toolbar: GridToolbar,
@@ -30,7 +32,7 @@ function Contacts() {
           columns={columns}
         />
       </Box>
-    </div>
+    </Box>
   );
 }
 

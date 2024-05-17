@@ -2,7 +2,7 @@ import { Box, useTheme } from "@mui/material";
 import { ResponsiveLine } from "@nivo/line";
 import { data } from "./data";
 
-function Line({isDahboard = false}) {
+function Line({ isDahboard = false }) {
   const theme = useTheme();
 
   return (

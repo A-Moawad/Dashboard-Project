@@ -1,10 +1,10 @@
 import React from "react";
 import { Box, Typography, useTheme } from "@mui/material";
 
-const Header = ({ title, subTitle}) => {
+const Header = ({ title, subTitle, isDashboard = false }) => {
   const theme = useTheme();
   return (
-    <Box mb={2} mt={10}>
+    <Box mb={isDashboard ? 2: 4}>
       <Typography
         sx={{
           fontSize: "32px",

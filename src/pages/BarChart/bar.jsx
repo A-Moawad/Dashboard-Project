@@ -9,8 +9,8 @@ const Bar = ({ isDashbord = false }) => {
     <Box
       sx={{
         height: isDashbord ? "300px" : "75vh",
-        width: "100vw",
-        px: "100px",
+        width: isDashbord ? "100%" : "100vw"
+        // px: "100px",
       }}
     >
       <ResponsiveBar

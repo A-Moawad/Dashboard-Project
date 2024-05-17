@@ -81,7 +81,7 @@ function Faq() {
   };
 
   return (
-    <Stack direction="column" className="accordions">
+    <Stack direction="column" className="accordions" mt={10}>
       <Header title="FAQ" subTitle="Frequently Asked Questions Page"/>
       
       {faqData.map((item) => (

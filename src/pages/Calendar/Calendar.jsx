@@ -1,7 +1,7 @@
 import { useState } from "react";
 import FullCalendar from "@fullcalendar/react"; // must go before plugins
 import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
-import { Paper, Stack } from "@mui/material";
+import { Box, Paper, Stack } from "@mui/material";
 import { formatDate } from "@fullcalendar/core";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
@@ -76,7 +76,7 @@ const Calendar = () => {
   };
 
   return (
-    <div style={{paddingTop: "100px" , width: "100%"}}>
+    <Box sx={{paddingTop: "100px" , width: "100%", }}>
       <Stack direction={"row"} sx={{ minWidth: "100%", minHeight: "100%" }}>
         <Paper className="demo-app-sidebar">
           <h2 style={{ textAlign: "center" }}>
@@ -112,7 +112,7 @@ const Calendar = () => {
           />
         </div>
       </Stack>
-    </div>
+    </Box>
   );
 };
 
